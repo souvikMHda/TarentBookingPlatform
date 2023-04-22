@@ -1,6 +1,7 @@
-package com.fundsaccess.TrainingBookingPlatform.pojo;
+package com.tarent.trainingBookingPlatform.entity;
 
 
+import com.tarent.trainingBookingPlatform.dto.SavedTrainingCourseDto;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -29,8 +30,15 @@ public class TrainingCourse {
     Double fee;
 
     @Column(name="BOOKINGS_LEFT")
-    String bookingsLeft;
+    Integer bookingsLeft;
 
     @Column(name="TRAINING_DATE")
     LocalDate trainingDate;
+
+    public SavedTrainingCourseDto toDto(){
+        return new SavedTrainingCourseDto(java.util.Optional.ofNullable(this.trainingCourseId),
+                this.courseName,this.instructorName,this.description,
+                this.fee,this.bookingsLeft,this.trainingDate);
+
+    }
 }

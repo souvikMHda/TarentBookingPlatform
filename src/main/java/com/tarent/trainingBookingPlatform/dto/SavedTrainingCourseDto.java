@@ -1,6 +1,7 @@
 package com.tarent.trainingBookingPlatform.dto;
 
 
+import com.tarent.trainingBookingPlatform.entity.TrainingCourse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.Optional;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class TrainingCourseDtoResponse {
+public class SavedTrainingCourseDto {
 
     private Optional<Long> trainingCourseId;
 
@@ -33,4 +34,20 @@ public class TrainingCourseDtoResponse {
 
     private Integer bookingsLeft;
     private LocalDate trainingDate;
+
+    /**
+     * This method allows the object to be transformed to its corresponding Entity object
+     * @return Entity object
+     */
+    public TrainingCourse toEntity(){
+        TrainingCourse trainingCourse = new TrainingCourse();
+        trainingCourse.setTrainingCourseId(this.trainingCourseId.orElse(null));
+        trainingCourse.setCourseName(this.courseName);
+        trainingCourse.setInstructorName(this.instructorName);
+        trainingCourse.setDescription(this.description);
+        trainingCourse.setFee(this.fee);
+        trainingCourse.setBookingsLeft(this.bookingsLeft);
+        trainingCourse.setTrainingDate(this.trainingDate);
+        return trainingCourse;
+    }
 }
