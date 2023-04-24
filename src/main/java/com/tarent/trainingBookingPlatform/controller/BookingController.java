@@ -45,7 +45,8 @@ public class BookingController {
     /**
      * This method allows user to be added
      * @param userInfoDto has the attributes pertaining to the user
-     * @return added user
+     * @return added user.
+     * This method should ideally create a JWT token for the user
      */
     @PostMapping("/addUser")
     public ResponseEntity<UserInfoDto> addUser(@Valid @RequestBody UserInfoDto userInfoDto){

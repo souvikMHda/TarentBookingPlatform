@@ -13,6 +13,7 @@ import com.tarent.trainingBookingPlatform.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -35,6 +36,7 @@ public class BookingCourseDaoImpl implements BookingCourseDao{
      * @return
      */
     @Override
+    @Transactional
     public TraineeInfo bookTraineeWithCourse(UserTrainingDto userTrainingDto) {
         Optional<TrainingCourse> trainingCourse= trainingCourseRepository.findById(userTrainingDto.getTrainingCourseId());
         Optional<UserInfo> userInfo= userInfoRepository.findById(userTrainingDto.getUserId());

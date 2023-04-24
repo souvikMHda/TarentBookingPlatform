@@ -23,6 +23,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * This method is for authentication
      * @param auth
      * @throws Exception
+     * The current method authenticates against a database. OAuth2 can be used for authentication
+     * purposes.
      */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * This method is to authorize users based on roles
      * @param http
      * @throws Exception
+     * For Authentication/Authorization OAuth2 can be used
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {

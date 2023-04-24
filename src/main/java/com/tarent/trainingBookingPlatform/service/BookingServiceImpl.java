@@ -2,7 +2,6 @@ package com.tarent.trainingBookingPlatform.service;
 
 import com.tarent.trainingBookingPlatform.constants.Constants;
 import com.tarent.trainingBookingPlatform.dao.BookingCourseDao;
-import com.tarent.trainingBookingPlatform.dao.TrainingCourseDao;
 import com.tarent.trainingBookingPlatform.dto.CourseBookingStatus;
 import com.tarent.trainingBookingPlatform.dto.UserTrainingDto;
 import com.tarent.trainingBookingPlatform.entity.TraineeInfo;
